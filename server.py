@@ -14,19 +14,22 @@ def gen():
     if streamer.streaming:
       yield (b'--frame\r\n'b'Content-Type: image/jpeg\r\n\r\n' + streamer.get_jpeg() + b'\r\n\r\n')
 
+# 기본 UI
 @app.route('/')
 def index():
   return render_template('view.html')
 
+# local json file을 보내는 것 구현 중
 @app.route('/test', methods=['GET'])
 def result():
   with open("data.json", "r+") as jsonFile:
     data = json.load(jsonFile)
 
   Inference_value = data
-  
+
   return jsonify(result = "success", result2= Inference_value)
 
+# Webcam feed
 @app.route('/video_feed')
 def video_feed():
   return Response(gen(), mimetype='multipart/x-mixed-replace; boundary=frame')

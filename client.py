@@ -32,6 +32,7 @@ with warnings.catch_warnings():
     warnings.simplefilter("ignore")
     with mp_pose.Pose(min_detection_confidence=0.8, min_tracking_confidence=0.5) as pose:
         cur = "None"
+        # while을 돌며 계속 Webcam feed를 받음
         while cap.isOpened():
             _, frame = cap.read()
 
@@ -55,6 +56,7 @@ with warnings.catch_warnings():
 
                 cur = body_language_class
                 
+                # 현재 행동이 무슨 행동인지에 따라 local에 있는 json file을 바꿈
                 with open("data.json", "r+") as jsonFile:
                     data = json.load(jsonFile)
 
@@ -64,6 +66,7 @@ with warnings.catch_warnings():
                     json.dump(data, jsonFile)
                     jsonFile.truncate()
 
+            # webcam을 socket에 담아 보냄
             memfile = BytesIO()
             np.save(memfile, frame)
             memfile.seek(0)
