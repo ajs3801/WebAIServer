@@ -323,20 +323,34 @@
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script> 
     
   <script>
+    const ActionTag = document.getElementById("action");
 
-    $.ajax({
+    const SquatTag = document.getElementById("squat");
+
+    const LungeTag = document.getElementById("lunge");
+
+    const PushupTag = document.getElementById("pushup");
+
+    function getData() {
+      $.ajax({
         type:"GET",
         url : 'http://127.0.0.1:5000/test',
         dataType : 'JSON',
         contentType: "application/json",
         success : function(data){
-            console.log(data.result2)
+            console.log(data.result2);
+            ActionTag.textContent = data.result2['Action'];
+            SquatTag.textContent = data.result2['Squat'];
+            LungeTag.textContent = data.result2['Lunge'];
+            PushupTag.textContent = data.result2['Pushup'];
         },
         error : function(request,status,error) {
-          
-        }
-    })
 
+        }
+      })
+    }
+
+    setInterval(getData,200)
   </script>
   <script>
     ScrollOut({});
