@@ -7,6 +7,110 @@
         <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous">
         <link rel="stylesheet" href="./style.css">
         <script src="https://unpkg.com/scroll-out/dist/scroll-out.min.js"></script>
+
+        <style>
+            #content {
+                margin: 0 auto;
+                overflow: hidden;
+            }
+            #content>#webcam{
+                float:left;
+            }
+            #content>#aside{
+                float:right;
+            }
+            #content>#aside>#time{
+                width: 300px;
+                height: 100px;
+                display : flex;
+                justify-content : left;
+                align-items : center;
+                position: fixed;
+                right: 10px;
+                top: 105px;
+                font-weight: bold;
+            }
+            #content>#aside>#cur_time{
+                display:table;
+                table-layout:fixed;
+                text-align:center;
+                width: 300px;
+                height: 100px;
+                background: lightgray;
+                border-radius: 8px;
+                position: fixed;
+                right: 10px;
+                top: 180px;
+                font-weight: bold;
+                vertical-align: middle;
+            }
+            #content>#aside>#count{
+                width: 300px;
+                height: 100px;
+                display : flex;
+                justify-content : left;
+                align-items : center;
+                position: fixed;
+                right: 10px;
+                top: 265px;
+                font-weight: bold;
+            }
+            #content>#aside>#cur_count{
+                display:table;
+                table-layout:fixed;
+                text-align:center;
+                width: 300px;
+                height: 100px;
+                background: lightgray;
+                border-radius: 8px;
+                position: fixed;
+                right: 10px;
+                top: 340px;
+                font-weight: bold;
+                font-size: 18pt;
+                vertical-align: middle;
+            }
+            #content>#aside>#feedback{
+                width: 300px;
+                height: 100px;
+                display : flex;
+                justify-content : left;
+                align-items : center;
+                position: fixed;
+                right: 10px;
+                top: 580px;
+                font-weight: bold;
+            }
+            #content>#aside>#cur_feedback{
+                width: 300px;
+                height: 100px;
+                background: lightgray;
+                border-radius: 8px;
+                position: fixed;
+                right: 10px;
+                top: 655px;
+                font-weight: bold;
+                font-size: 18pt;
+                display : flex;
+                justify-content : center;
+                align-items : center;
+            }
+            #content>#aside>#food{
+                width: 300px;
+                height: 180px;
+                background: lightgray;
+                border-radius: 8px;
+                position: fixed;
+                right: 10px;
+                top: 775px;
+                font-weight: bold;
+                font-size: 18pt;
+                display : flex;
+                justify-content : center;
+                align-items : center;
+            }
+
+        </style>
     </head>
     <body>
         <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js" integrity="sha384-oBqDVmMz9ATKxIep9tiCxS/Z9fNfEXiDAYTujMAeBAsjFuCZSmKbSSUnQlmh/jp3" crossorigin="anonymous"></script>

@@ -19,7 +19,7 @@ html, body {
     box-sizing: content-box;
 } */
 
-#content {
+/* #content {
     margin: 0 auto;
     overflow: hidden;
 }
@@ -118,4 +118,4 @@ html, body {
     display : flex;
     justify-content : center;
     align-items : center;
-}
+} */
