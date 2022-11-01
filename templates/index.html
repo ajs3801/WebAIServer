@@ -33,13 +33,9 @@
         <!-- content -->
         <div id="content">
             <!-- webcam -->
-            <section data-scroll="" id="real_time_view">
-                <img height="420px" src="{{ url_for('video_feed') }}" width="720px"/>
-            </section>
-
             <section id="webcam">
                 <div id="real_time_view">
-                    <img src="./mountain.jpg" style="width: 1530px; height: 850px;"/>
+                    <img src="{{ url_for('video_feed') }}" style="width: 1530px; height: 850px;"/>
                 </div>
             </section>
             
