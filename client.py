@@ -44,7 +44,7 @@ def ActionPerformed(prev,cur):
         return const.NONE_STRING
 
 # Capture frame
-cap = cv2.VideoCapture("full_test.avi")
+cap = cv2.VideoCapture("test.mp4")
 
 # http://127.0.0.1:8000
 client_socket = socket.socket(socket.AF_INET, socket.SOCK_STREAM)

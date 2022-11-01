@@ -132,17 +132,6 @@
         padding: 10rem 2rem;
       }
 
-      /* section {
-        width: 600px;
-        height: 400px;
-        margin-bottom: 20px;
-        padding: 4rem;
-        background: white;
-        border-radius: 8px;
-        box-shadow: 0px 0px 0 1px transparentize(#204754, 0.97),
-          0px 0px 0 3px transparentize(#204754, 0.98);
-      } */
-
       .content {
         display: flex;
         flex-direction: column;
@@ -156,7 +145,7 @@
 
       #nav {
         width: 100%;
-        height: 70px;
+        height: 80px;
         position: absolute;
         left: 0px;
         top:0px;
@@ -169,17 +158,73 @@
 
       #real_time_view {
         width: 800px;
-        height: 500px;
+        height: 550px;
         margin-bottom: 20px;
         padding: 4rem;
         background: white;
         border-radius: 8px;
         box-shadow: 0px 0px 0 1px transparentize(#204754, 0.97),
           0px 0px 0 3px transparentize(#204754, 0.98);
-        margin-top: 100px;
+        margin-top: 20px;
       }
 
-      #status {
+      #status_action {
+        width: 200px;
+        height: 150px;
+        margin-bottom: 20px;
+        padding: 4rem;
+        background: white;
+        border-radius: 8px;
+        position: fixed;
+        left: 50px;
+        top: 130px;
+        box-shadow: 0px 0px 0 1px transparentize(#204754, 0.97),
+          0px 0px 0 3px transparentize(#204754, 0.98);
+      }
+
+      #status_squat {
+        width: 200px;
+        height: 150px;
+        margin-bottom: 20px;
+        padding: 4rem;
+        background: white;
+        border-radius: 8px;
+        position: fixed;
+        left: 50px;
+        top: 290px;
+        box-shadow: 0px 0px 0 1px transparentize(#204754, 0.97),
+          0px 0px 0 3px transparentize(#204754, 0.98);
+      }
+
+      #status_lunge {
+        width: 200px;
+        height: 150px;
+        margin-bottom: 20px;
+        padding: 4rem;
+        background: white;
+        border-radius: 8px;
+        position: fixed;
+        left: 50px;
+        top: 460px;
+        box-shadow: 0px 0px 0 1px transparentize(#204754, 0.97),
+          0px 0px 0 3px transparentize(#204754, 0.98);
+      }
+
+      #status_pushup {
+        width: 200px;
+        height: 150px;
+        margin-bottom: 20px;
+        padding: 4rem;
+        background: white;
+        border-radius: 8px;
+        position: fixed;
+        left: 50px;
+        top: 630px;
+        box-shadow: 0px 0px 0 1px transparentize(#204754, 0.97),
+          0px 0px 0 3px transparentize(#204754, 0.98);
+      }
+
+      #option {
         width: 200px;
         height: 200px;
         margin-bottom: 20px;
@@ -187,22 +232,8 @@
         background: white;
         border-radius: 8px;
         position: fixed;
-        left: 50px;
-        top: 100px;
-        box-shadow: 0px 0px 0 1px transparentize(#204754, 0.97),
-          0px 0px 0 3px transparentize(#204754, 0.98);
-      }
-
-      #option {
-        width: 200px;
-        height: 400px;
-        margin-bottom: 20px;
-        padding: 4rem;
-        background: white;
-        border-radius: 8px;
-        position: fixed;
         right: 50px;
-        top: 100px;
+        top: 130px;
         box-shadow: 0px 0px 0 1px transparentize(#204754, 0.97),
           0px 0px 0 3px transparentize(#204754, 0.98);
       }
@@ -264,6 +295,20 @@
         -moz-osx-font-smoothing: grayscale;
       }
 
+      #title {
+        padding-top: 9px;
+        color:#A50034;
+        font-size: var(--font-large);
+        font-family: 'Nunito', sans-serif;
+      }
+      
+      /* #reset {
+        margin-bottom: 30px;
+        font-size: var(--font-regular);
+      }
+      #challenge {
+        font-size: var(--font-regular);
+      } */
       section:last-child {
         margin-bottom: 0;
       }
@@ -294,31 +339,71 @@
   </title>
  </head>
  <body>
+  <nav class="navbar navbar-expand-lg bg-dark">
+    <div class="container-fluid">
+        <a class="navbar-brand" href="./Start_page.html" style="font-size: 48pt; font-weight: 900; color:white; padding-left: 30px;">LG U+</a>
+        <div class="collapse navbar-collapse" id="navbarText">
+            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                <span class="navbar-text" style="font-size: 20pt; font-weight: 500; color:#D0006F; padding-left:30px; padding-top: 37px;">
+                    Free mode             
+                </span>
+                <li class="nav-item">
+                    <a class="nav-link" href="./Setting_page.html" style="font-size: 25pt; font-weight: 500; color:white; padding-left:70px; padding-top: 30px;">Change mode</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="./Exercise_guide_page.html" style="font-size: 25pt; font-weight: 500; color:white; padding-left:30px; padding-top: 30px;">Posture guide</a>
+                </li>
+            </ul>
+        </div>
+    </div>
+</nav>
   <div class="content">
-   <section id="nav">
-    <div>
+   <!-- <section id="nav">
+    <div id="title">
      실시간 행동인식
     </div>
-   </section>
+   </section> -->
    <section data-scroll="" id="real_time_view">
+    <p style="font-size: 30px">Main View</p>
     <img height="420px" src="{{ url_for('video_feed') }}" width="720px"/>
    </section>
-   <section id="status">
-    <div id="squat">
-     스쿼트 : 0
-    </div>
-    <div id="lunge">
-     런지 : 0
-    </div>
-    <div id="pushup">
-     푸쉬업 : 0
-    </div>
-    <div id="action">
+
+   <section id="status_action">
+    <p id="action_label" style="color:#A50034">현재 운동</p>
+    <p id="action" style="font-size: 30px">
       Empty
+    </p>
+   </section>
+
+   <section id="status_squat">
+    <div>
+      <p id="squat_label" style="color:#A50034">스쿼트</p>
+      <p id="squat" style="font-size: 40px">0</p>
     </div>
    </section>
+
+   <section id="status_lunge">
+    <div>
+      <p id="lunge_label" style="color:#A50034">런지</p>
+      <p id="lunge" style="font-size: 40px">
+        0
+      </p>
+    </div>
+   </section>
+
+   <section id="status_pushup">
+    <div>
+      <p id="pushup_label" style="color:#A50034">푸쉬업</p>
+      <p id="pushup" style="font-size: 40px">
+        0
+      </p>
+    </div>
+   </section>
+
    <section id="option">
-    <img height="100px" src="./index.jpeg" width="100px"/>
+    <p></p>
+    <!-- <div><button id="reset">Reset</button></div>
+    <div><button id="challenge">Challenge</button></div> -->
    </section>
   </div>
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script> 

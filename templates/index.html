@@ -6,6 +6,7 @@
         <title>Bootstrap demo</title>
         <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous">
         <link rel="stylesheet" href="./style.css">
+        <script src="https://unpkg.com/scroll-out/dist/scroll-out.min.js"></script>
     </head>
     <body>
         <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js" integrity="sha384-oBqDVmMz9ATKxIep9tiCxS/Z9fNfEXiDAYTujMAeBAsjFuCZSmKbSSUnQlmh/jp3" crossorigin="anonymous"></script>
@@ -32,6 +33,10 @@
         <!-- content -->
         <div id="content">
             <!-- webcam -->
+            <section data-scroll="" id="real_time_view">
+                <img height="420px" src="{{ url_for('video_feed') }}" width="720px"/>
+            </section>
+
             <section id="webcam">
                 <div id="real_time_view">
                     <img src="./mountain.jpg" style="width: 1530px; height: 850px;"/>
