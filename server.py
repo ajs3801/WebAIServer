@@ -17,7 +17,7 @@ def gen():
 # 기본 UI
 @app.route('/')
 def index():
-  return render_template('view.html')
+  return render_template('index.html')
 
 # local json file을 보내는 것 구현 중
 @app.route('/test', methods=['GET'])
@@ -28,6 +28,32 @@ def result():
   Inference_value = data
 
   return jsonify(result = "success", result2= Inference_value)
+
+# for reset button
+@app.route('/reset', methods=['POST'])
+def reset():
+  print("GET POSTED");
+  with open("data.json", "r+") as jsonFile:
+    data = json.load(jsonFile)
+
+    data["ResetFlag"] = "1";
+    jsonFile.seek(0)  # rewind
+    json.dump(data, jsonFile)
+    jsonFile.truncate()
+  return jsonify(result = "success", result2= 1)
+
+@app.route('/challenge', methods=['POST'])
+def challenge():
+  print("GET POSTED challenge");
+  with open("data.json", "r+") as jsonFile:
+    data = json.load(jsonFile)
+
+    data["ChallengeFlag"] = "1";
+    jsonFile.seek(0)  # rewind
+    json.dump(data, jsonFile)
+    jsonFile.truncate()
+
+  return jsonify(result = "success", result2= 1)
 
 # Webcam feed
 @app.route('/video_feed')

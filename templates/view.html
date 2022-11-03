@@ -37,7 +37,7 @@
         --size-border-radius: 4px;
 
         
-        --animation-duration: 300ms;
+        --animation-duration: 400ms;
       }
 
       html,
@@ -56,9 +56,9 @@
         width: 100%;
         background-image: linear-gradient(
           180deg,
-          #5961f9 0%,
-          #2afadf 40%,
-          #f9fea5 100%
+          #F4F3EA 0%,
+          #A3C6C4 40%,
+          #F4F3EA 100%
         );
         background-repeat: no-repeat;
       }
@@ -83,7 +83,7 @@
 
       h1,
       p {
-        color: #204754;
+        color: #A50034;
         font-family: 'Nunito', sans-serif;
         -webkit-font-smoothing: antialiased;
         -moz-osx-font-smoothing: grayscale;
@@ -108,24 +108,14 @@
         cursor: pointer;
         border: none;
         outline: none;
-        border: 1px solid white;
-        background-color: #5961f9;
         color: var(--color-white);
       }
 
       button:hover {
-        background-color: white;
-        border: 1px solid #5961f9;
         color:#5961f9;
         transition: all var(--animation-duration) ease-in
       }
-      .modern__select:hover {
-        background-color: var(--color-black);
-        color: var(--color-white);
-        border: 2px solid var(--color-white);
-        transition: all var(--animation-duration) ease-in
-      }
-
+      
       .site-wrap {
         max-width: 700px;
         margin: 0 auto;
@@ -137,10 +127,6 @@
         flex-direction: column;
         justify-content: center;
         align-items: center;
-      }
-      .namecard {
-        display: flex;
-        justify-content: center;
       }
 
       #nav {
@@ -157,8 +143,9 @@
       }
 
       #real_time_view {
-        width: 800px;
-        height: 550px;
+        width: 1100px;
+        height: 650px;
+        margin-left: 150px;
         margin-bottom: 20px;
         padding: 4rem;
         background: white;
@@ -224,77 +211,6 @@
           0px 0px 0 3px transparentize(#204754, 0.98);
       }
 
-      #option {
-        width: 200px;
-        height: 200px;
-        margin-bottom: 20px;
-        padding: 4rem;
-        background: white;
-        border-radius: 8px;
-        position: fixed;
-        right: 50px;
-        top: 130px;
-        box-shadow: 0px 0px 0 1px transparentize(#204754, 0.97),
-          0px 0px 0 3px transparentize(#204754, 0.98);
-      }
-      #textField__left__btn {
-        margin:auto;
-        font-size: var(--font-regular);
-      }
-
-      #textField__right__btn {
-        margin: auto;
-        font-size: var(--font-regular);
-      }
-      .namecard__view {
-        margin-right: 30px;
-        margin: auto;
-      }
-
-      .finish {
-        padding: 0px 0px 0px 0px;
-      }
-
-      #finish__btn {
-        width: 100%;
-        height: 100%;
-        background-color: #5961f9;
-        margin: 0px 0px 0px 0px;
-      }
-
-      #finish__btn:hover {
-        background-color: #5961f9;
-        border: 1px solid white;
-        color: white;
-        transition: all var(--animation-duration) ease-in
-      }
-      .input {
-        display:flex;
-        margin-top: 30px;
-        justify-content: center;
-      }
-
-      .select__div {
-        text-align: center;
-        margin-top: 10px;
-      }
-
-      #select__btn {
-        font-size: var(--font-regular);
-      }
-
-      #nameField {
-        margin-right: 10px;
-      }
-
-      #message__popup {
-        text-align: center;
-        font-size: var(--font-regular);
-        font-family: 'Nunito', sans-serif;
-        -webkit-font-smoothing: antialiased;
-        -moz-osx-font-smoothing: grayscale;
-      }
-
       #title {
         padding-top: 9px;
         color:#A50034;
@@ -302,13 +218,6 @@
         font-family: 'Nunito', sans-serif;
       }
       
-      /* #reset {
-        margin-bottom: 30px;
-        font-size: var(--font-regular);
-      }
-      #challenge {
-        font-size: var(--font-regular);
-      } */
       section:last-child {
         margin-bottom: 0;
       }
@@ -344,14 +253,14 @@
         <a class="navbar-brand" href="./Start_page.html" style="font-size: 48pt; font-weight: 900; color:white; padding-left: 30px;">LG U+</a>
         <div class="collapse navbar-collapse" id="navbarText">
             <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-                <span class="navbar-text" style="font-size: 20pt; font-weight: 500; color:#D0006F; padding-left:30px; padding-top: 37px;">
+                <span id="Mode" class="navbar-text" style="font-size: 20pt; font-weight: 500; color:#D0006F; padding-left:30px; padding-top: 37px;">
                     Free mode             
                 </span>
                 <li class="nav-item">
-                    <a class="nav-link" href="./Setting_page.html" style="font-size: 25pt; font-weight: 500; color:white; padding-left:70px; padding-top: 30px;">Change mode</a>
+                    <button id="challenge" class="nav-link" style="font-size: 25pt; font-weight: 500; color:white; padding-left:70px; padding-top: 30px;">Change mode</button>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="./Exercise_guide_page.html" style="font-size: 25pt; font-weight: 500; color:white; padding-left:30px; padding-top: 30px;">Posture guide</a>
+                    <button id="reset"class="nav-link" href="./Exercise_guide_page.html" style="font-size: 25pt; font-weight: 500; color:white; padding-left:30px; padding-top: 30px;">Reset</button>
                 </li>
             </ul>
         </div>
@@ -363,48 +272,43 @@
      실시간 행동인식
     </div>
    </section> -->
-   <section data-scroll="" id="real_time_view">
-    <p style="font-size: 30px">Main View</p>
-    <img height="420px" src="{{ url_for('video_feed') }}" width="720px"/>
+   <section data-scroll="" id="real_time_view" class = "bg-dark">
+    <p style="font-size: 30px" style="color: #A50034">현재 화면</p>
+    <img style="margin-left: 10px; "height="530px" src="{{ url_for('video_feed') }}" width="980px"/>
    </section>
 
-   <section id="status_action">
+   <section id="status_action" class = "bg-dark">
     <p id="action_label" style="color:#A50034">현재 운동</p>
-    <p id="action" style="font-size: 30px">
-      Empty
+    <p id="action" style="font-size: 30px; color:#eeeeee;">
+      
     </p>
    </section>
 
-   <section id="status_squat">
+   <section id="status_squat" class = "bg-dark">
     <div>
       <p id="squat_label" style="color:#A50034">스쿼트</p>
-      <p id="squat" style="font-size: 40px">0</p>
+      <p id="squat" style="font-size: 40px; color:#eeeeee;">0</p>
     </div>
    </section>
 
-   <section id="status_lunge">
+   <section id="status_lunge" class = "bg-dark">
     <div>
       <p id="lunge_label" style="color:#A50034">런지</p>
-      <p id="lunge" style="font-size: 40px">
+      <p id="lunge" style="font-size: 40px; color:#eeeeee;">
         0
       </p>
     </div>
    </section>
 
-   <section id="status_pushup">
+   <section id="status_pushup" class = "bg-dark">
     <div>
       <p id="pushup_label" style="color:#A50034">푸쉬업</p>
-      <p id="pushup" style="font-size: 40px">
+      <p id="pushup" style="font-size: 40px; color:#eeeeee;">
         0
       </p>
     </div>
    </section>
 
-   <section id="option">
-    <p></p>
-    <!-- <div><button id="reset">Reset</button></div>
-    <div><button id="challenge">Challenge</button></div> -->
-   </section>
   </div>
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script> 
     
@@ -417,6 +321,17 @@
 
     const PushupTag = document.getElementById("pushup");
 
+    const Reset = document.getElementById("reset");
+
+    const Challenge = document.getElementById("challenge");
+    
+    const Mode = document.getElementById("Mode");
+
+    let CHALLENGE_FLAG = false;
+    let squat_challenge;
+    let lunge_challenge;
+    let pushup_challenge;
+
     function getData() {
       $.ajax({
         type:"GET",
@@ -425,18 +340,95 @@
         contentType: "application/json",
         success : function(data){
             console.log(data.result2);
-            ActionTag.textContent = data.result2['Action'];
-            SquatTag.textContent = data.result2['Squat'];
-            LungeTag.textContent = data.result2['Lunge'];
-            PushupTag.textContent = data.result2['Pushup'];
+
+            if (data.result2['Action'] === "squat") {
+              ActionTag.textContent = "스쿼트";
+            }
+
+            else if (data.result2['Action'] === "lunge") {
+              ActionTag.textContent = "런지";
+            }
+
+            else if (data.result2['Action'] === "pushup") {
+              ActionTag.textContent = "푸쉬업";
+            }
+
+            else if (data.result2['Action'] === "stand") {
+              ActionTag.textContent = "준비 중";
+            }
+
+            else if (data.result2['Action'] === "lying") {
+              ActionTag.textContent = "준비 중";
+            }
+            
+            else {
+              ActionTag.textContent = "준비 중";
+            }
+            
+            if (CHALLENGE_FLAG) {
+              let squat_flag = false;
+              let lunge_flag = false;
+              let pushup_flag = false;
+
+              if (parseInt(data.result2['Squat']) === squat_challenge) {
+                squat_flag = true;
+              }
+
+              if (parseInt(data.result2['Lunge']) === lunge_challenge) {
+                lunge_flag = true;
+              }
+
+              if (parseInt(data.result2['Pushup']) === pushup_challenge) {
+                pushup_flag = true;
+              }
+
+              if (squat_flag===true && lunge_flag===true && pushup_flag===true) {
+                CHALLENGE_FLAG = false;
+                Mode.textContent = "Free mode";
+              }
+
+              SquatTag.textContent = data.result2['Squat'] + ' / ' + String(squat_challenge);
+              LungeTag.textContent = data.result2['Lunge'] + ' / ' + String(lunge_challenge);
+              PushupTag.textContent = data.result2['Pushup'] + ' / ' + String(pushup_challenge);
+            }
+            else {
+              SquatTag.textContent = data.result2['Squat'];
+              LungeTag.textContent = data.result2['Lunge'];
+              PushupTag.textContent = data.result2['Pushup'];
+            }
         },
         error : function(request,status,error) {
 
         }
       })
     }
-
+    
     setInterval(getData,200)
+
+    // reset button
+    Reset.addEventListener("click", () => {
+      console.log("Clicked");
+      $.ajax({
+        type:"POST",
+        url : 'http://127.0.0.1:5000/reset',
+        dataType : 'JSON',
+        contentType: "application/json",
+        success : function(data){
+        
+        },
+        error : function(request,status,error) {
+
+        }
+      })
+    });
+    
+    Challenge.addEventListener("click", () => {
+      CHALLENGE_FLAG = true;
+      squat_challenge = parseInt(SquatTag.textContent) + 5;
+      lunge_challenge = parseInt(LungeTag.textContent) + 5;
+      pushup_challenge = parseInt(PushupTag.textContent) + 5;
+      Mode.textContent = "Challenge Mode!";
+    });
   </script>
   <script>
     ScrollOut({});

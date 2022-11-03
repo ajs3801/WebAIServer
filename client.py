@@ -56,7 +56,7 @@ with warnings.catch_warnings():
 
     with open("data.json", "r+") as jsonFile:
         data = json.load(jsonFile)
-
+        data["Action"] = "준비중"
         data["Squat"] = str(NumSquat)
         data["Lunge"] = str(NumLunge)
         data["Pushup"] = str(NumPushup)
@@ -109,6 +109,14 @@ with warnings.catch_warnings():
                     data = json.load(jsonFile)
 
                     data["Action"] = cur
+                    print(data["ResetFlag"])
+                    if (data["ResetFlag"] == "1"):
+                        print("step into resetFLAG")
+                        NumSquat = 0;
+                        NumPushup = 0;
+                        NumLunge = 0;
+                        data["ResetFlag"] = "0";
+
                     data["Squat"] = str(NumSquat)
                     data["Lunge"] = str(NumLunge)
                     data["Pushup"] = str(NumPushup)
