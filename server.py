@@ -14,10 +14,15 @@ def gen():
     if streamer.streaming:
       yield (b'--frame\r\n'b'Content-Type: image/jpeg\r\n\r\n' + streamer.get_jpeg() + b'\r\n\r\n')
 
+# # 기본 UI
+# @app.route('/')
+# def start():
+#   return render_template('Start_page.html')
+
 # 기본 UI
 @app.route('/')
 def index():
-  return render_template('index.html')
+  return render_template('view.html')
 
 # local json file을 보내는 것 구현 중
 @app.route('/test', methods=['GET'])

@@ -20,7 +20,7 @@ class Streamer(threading.Thread):
     def run(self):
         s = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
         print('Socket created')
-
+        
         s.bind((self.hostname, self.port))
         print('Socket bind complete')
 
